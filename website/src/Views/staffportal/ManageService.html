@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{pagetitle}}</title>
+    <link rel="stylesheet" href="/public/css/staff/StaffShared.css" />
+  </head>
+
+  <body>
+    {{ include('/staffportal/header.html') }}
+    <main>
+      <h1 class="">Service Management</h1>
+
+      <!-- Helper section to assist staff provides overview for the tables  -->
+      <section class="story">
+        <h3>Assigned Services</h3>
+        <p>
+          This section displays the services assigned to the selected date. Use
+          the "Amend" button to update service details. To view all services,
+          clear the filter. To view services for a specific date, select a date
+          from the calendar. To add Service click on 'Add Service'
+        </p>
+      </section>
+
+      <!-- Section to filter the tables, clear the table, add new services and amend the default services form -->
+      <section class="filter-section">
+        <label for="service-date">Selected Date:</label>
+        <input class="selecteddate" type="date" id="servicedate"
+        name="service-date" value="{{ " now" | date("Y-m-d") }}">
+
+        <button class="red-button" type="button" onclick="clearDate()">
+          Clear Filter
+        </button>
+        <button class="red-button" type="button" id="openFormdefault">
+          Setup Default Form
+        </button>
+
+        <button style="float: right" class="red-button" id="openFormBtn">
+          Add Service
+        </button>
+      </section>
+
+      <!-- Section for pop up form to add services for a particular date with their start, end times alongside with all the other information required for service setup -->
+      <section>
+        <div id="serviceFormModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create Service</h2>
+
+            <!-- form to add service  -->
+            <form id="serviceForm">
+              <div>
+                <label for="service-date">Service Date:</label>
+                <!-- sets the current day to filter by -->
+                <input type="date" id="service-date" name="service-date"
+                value="{{ " now" | date("Y-m-d") }}" required>
+              </div>
+              <!-- drop down option to select which service you would like to add -->
+              <div>
+                <label for="service">Service Status:</label>
+                <select id="service" name="service" required>
+                  <option value="Breakfast">Breakfast</option>
+                  <option value="Lunch">Lunch</option>
+                  <option value="Dinner">Dinner</option>
+                </select>
+              </div>
+              <!-- start time -->
+              <div>
+                <label for="time-start">Start Time:</label>
+                <input type="time" id="time-start" name="time-start" required />
+              </div>
+              <!-- end time -->
+              <div>
+                <label for="time-end">End Time:</label>
+                <input type="time" id="time-end" name="time-end" required />
+              </div>
+              <!-- tables min is 1 and has to be a number -->
+              <div>
+                <label for="tables-available">Tables Available:</label>
+                <input
+                  type="number"
+                  id="tables-available"
+                  name="tables-available"
+                  min="1"
+                  required
+                />
+              </div>
+              <!-- drop down to select option for service status -->
+              <div>
+                <label for="service-status">Service Status:</label>
+                <select id="service-status" name="service-status" required>
+                  <option value="available">Available</option>
+                  <option value="fully booked">Fully Booked</option>
+                  <option value="closed">Closed</option>
+                </select>
+              </div>
+              <!-- buttomn to submit -->
+              <button class="red-button" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section for pop up form to setup default services for the staff to use  twig used to prepopulate the form with existing defualt services data-->
+      <section>
+        <div id="defaultFormModal" class="modal">
+          <div class="modal-content">
+            <span id="closebtndefault" class="close-btn">&times;</span>
+            <h2>Setup Default Service</h2>
+
+            <!-- Form to Setup Default Service -->
+            <form id="defaultServiceForm">
+              {% for service in default_services %}
+              <div>
+                <h3>{{ service.service }}</h3>
+                <label for="{{ service.service }}-time-start"
+                  >Start Time:</label
+                >
+
+                <input
+                  type="time"
+                  id="{{ service.service }}-time-start"
+                  name="{{ service.service }}-time-start"
+                  value="{{service.time_start}}"
+                  required
+                />
+
+                <label for="{{ service.service }}-time-end">End Time:</label>
+                <input
+                  type="time"
+                  id="{{ service.service }}-time-end"
+                  name="{{ service.service }}-time-end"
+                  value="{{service.time_end}}"
+                  required
+                />
+
+                <label for="{{ service.service }}-tables-available"
+                  >Tables Available:</label
+                >
+                <input
+                  type="number"
+                  id="{{ service.service }}-tables-available"
+                  name="{{ service.service }}-tables-available"
+                  min="1"
+                  value="{{service.tables_available}}"
+                  required
+                />
+              </div>
+              {% endfor %}
+
+              <button class="red-button" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Table to display assigned services alongside a button which will allow you to amend a specific service updates in real time -->
+      <section class="section-fix">
+        <table>
+          <thead>
+            <!-- headings -->
+            <tr>
+              <th class="id-heading">ID</th>
+              <th>Service</th>
+              <th>Service Date</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Total Tables</th>
+              <th>Tables Booked</th>
+              <th>Status</th>
+              <th>Amend</th>
+            </tr>
+          </thead>
+          <!-- body of table for data fetched initially loaded by twig -->
+          <tbody id="serviceListBody">
+            {% for service in servicelist %}
+            <tr id="service-row">
+              <td class="id-data">{{ service.id }}</td>
+              <td>{{ service.service }}</td>
+              <td>{{ service.service_date }}</td>
+              <td>{{ service.time_start }}</td>
+              <td>{{ service.time_end }}</td>
+              <td>{{ service.tables_available }}</td>
+              <td>{{ service.tables_booked }}</td>
+              <td>{{ service.service_status }}</td>
+              <td>
+                <button
+                  class="amend-button"
+                  onclick="amendService(this)"
+                  type="button"
+                >
+                  Amend
+                </button>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Helper section to assist staff provides overview for unassigned table  -->
+      <section class="story">
+        <h3>Unassigned Services</h3>
+
+        <p>
+          This section provides an overview of each day starting from the
+          current date, indicating whether services have been assigned. It
+          offers a quick and clear status update for convenience. The
+          <strong>"Assign Default"</strong> button allows you to quickly assign
+          default services for a specific day. The form for configuring default
+          services can be found above. <strong>Note:</strong>
+          <strong>This action will not override any existing services</strong>,
+          so you can use it without concern.
+        </p>
+      </section>
+
+      <!-- Table to display unassigned services with a load more button to dispaly 7 more days -->
+      <section class="section-fix">
+        <table id="service-table">
+          <thead>
+            <tr>
+              <th>Service Date</th>
+              <th>Breakfast</th>
+              <th>Lunch</th>
+              <th>Dinner</th>
+              <th>Assign Default</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </section>
+      <button
+        style="margin-bottom: 10px"
+        class="red-button"
+        onclick="loadMoreDates()"
+      >
+        Load More
+      </button>
+    </main>
+    {{ include('/staffportal/footer.html') }}
+  </body>
+</html>
+
+<script src="/public/js/staff/ManageService.js"></script>

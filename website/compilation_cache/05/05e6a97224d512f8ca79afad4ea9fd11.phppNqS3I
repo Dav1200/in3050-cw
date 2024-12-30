@@ -1,0 +1,939 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* staffportal/service.html */
+class __TwigTemplate_e2e9da49c09e94afd28e12232cf1f66a extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 1
+        yield "<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["pagetitle"] ?? null), "html", null, true);
+        yield "</title>
+    <link rel=\"stylesheet\" href=\"/public/css/staffportalhub.css\">
+</head>
+
+<body>
+
+    ";
+        // line 13
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "/staffportal/header.html");
+        yield "
+    <main>
+        <h1 class=\"\">Service Management</h1>
+
+        <section class=\"filter-section\">
+
+            <label for=\"service-date\">Selected Date:</label>
+            <input class=\"selecteddate\" type=\"date\" id=\"servicedate\" name=\"service-date\" value=\"";
+        // line 20
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(" now", "Y-m-d"), "html", null, true);
+        // line 21
+        yield "\">
+
+            <button class=\"red-button\" type=\"button\" onclick=\"clearDate()\">Clear Filter</button>
+
+            <button style=\"float: right;\" class=\"red-button\" id=\"openFormBtn\">Add Service</button>
+
+        </section>
+
+
+        <div class=\"container\">
+            ";
+        // line 31
+        $context["days"] = ["Today" =>         // line 32
+($context["today_meals"] ?? null), "Tomorrow" =>         // line 33
+($context["tomorrow_meals"] ?? null), "Day After Tomorrow" =>         // line 34
+($context["day_after_tomorrow_meals"] ?? null)];
+        // line 36
+        yield "        
+            ";
+        // line 37
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(($context["days"] ?? null));
+        foreach ($context['_seq'] as $context["day"] => $context["service"]) {
+            // line 38
+            yield "            <div class=\"card\">
+                <h3>";
+            // line 39
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["day"], "html", null, true);
+            yield "</h3>
+                ";
+            // line 40
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable($context["service"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["day"]) {
+                // line 41
+                yield "                <div class=\"meal\">
+                    <strong>";
+                // line 42
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["day"], "name", [], "any", false, false, false, 42), "html", null, true);
+                yield "</strong>
+                    <div class=\"meal-time\">";
+                // line 43
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["day"], "time", [], "any", false, false, false, 43), "html", null, true);
+                yield "</div>
+                </div>
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_key'], $context['day'], $context['_parent']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 46
+            yield "            </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['day'], $context['service'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 48
+        yield "        </div>
+
+        <section>
+            <!-- The Modal -->
+            <div id=\"serviceFormModal\" class=\"modal\">
+                <div class=\"modal-content\">
+                    <span class=\"close-btn\">&times;</span>
+                    <h2>Create Service</h2>
+
+                    <!-- Form to Add Service -->
+                    <form id=\"serviceForm\">
+                        <div>
+                            <label for=\"service-date\">Service Date:</label>
+                            <input type=\"date\" id=\"service-date\" name=\"service-date\" value=\"";
+        // line 61
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(" now", "Y-m-d"), "html", null, true);
+        // line 62
+        yield "\" required>
+                        </div>
+
+                        <div>
+                            <label for=\"service\">Service Status:</label>
+                            <select id=\"service\" name=\"service\" required>
+                                <option value=\"Breakfast\">Breakfast</option>
+                                <option value=\"Lunch\">Lunch</option>
+                                <option value=\"Dinner\">Dinner</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for=\"time-start\">Start Time:</label>
+                            <input type=\"time\" id=\"time-start\" name=\"time-start\" required>
+                        </div>
+
+                        <div>
+                            <label for=\"time-end\">End Time:</label>
+                            <input type=\"time\" id=\"time-end\" name=\"time-end\" required>
+                        </div>
+
+                        <div>
+                            <label for=\"tables-available\">Tables Available:</label>
+                            <input type=\"number\" id=\"tables-available\" name=\"tables-available\" min=\"1\" required>
+                        </div>
+
+                        <div>
+                            <label for=\"service-status\">Service Status:</label>
+                            <select id=\"service-status\" name=\"service-status\" required>
+                                <option value=\"available\">Available</option>
+                                <option value=\"fully booked\">Fully Booked</option>
+                                <option value=\"closed\">Closed</option>
+                            </select>
+                        </div>
+
+                        <button class=\"red-button\" type=\"submit\">Submit</button>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th class=\"id-heading\">ID</th>
+                        <th>Service</th>
+                        <th>Service Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Total Tables</th>
+                        <th>Tables Booked</th>
+                        <th>Status</th>
+                        <th>Amend</th>
+                    </tr>
+                </thead>
+                <tbody id=\"serviceListBody\">
+                    ";
+        // line 123
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(($context["servicelist"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["service"]) {
+            // line 124
+            yield "                    <tr id=\"service-row\">
+                        <td class=\"id-data\">";
+            // line 125
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "id", [], "any", false, false, false, 125), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 126
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "service", [], "any", false, false, false, 126), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 127
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "service_date", [], "any", false, false, false, 127), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 128
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "time_start", [], "any", false, false, false, 128), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 129
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "time_end", [], "any", false, false, false, 129), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 130
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "tables_available", [], "any", false, false, false, 130), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 131
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "tables_booked", [], "any", false, false, false, 131), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 132
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "service_status", [], "any", false, false, false, 132), "html", null, true);
+            yield "</td>
+                        <td><button class=\"amend-button\" onclick=\"amendService(this)\" type=\"button\">Amend</button></td>
+                    </tr>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['service'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 136
+        yield "                </tbody>
+            </table>
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>
+
+<script>
+    //function to amend the service updates the form.
+    function amendService(button) {
+        //change the appearance of the form to coresspond to the amend action so we dont have to create a new form. 
+        var row = button.parentElement.parentElement;
+        var cells = row.getElementsByTagName(\"td\");
+        document.querySelector(\"h2\").innerText = \"Update Service\";
+        document.querySelector(\"button[type='submit']\").innerText = \"Update\";
+        // Populate the form with the values from the selected row
+        document.getElementById(\"service-date\").value = cells[2].innerText;
+        document.getElementById(\"service\").value = cells[1].innerText;
+        document.getElementById(\"time-start\").value = cells[3].innerText;
+        document.getElementById(\"time-end\").value = cells[4].innerText;
+        document.getElementById(\"tables-available\").value = cells[5].innerText;
+        document.getElementById(\"service-status\").value = cells[7].innerText;
+
+
+        //check if there is a delete button already and remove it so we dont override
+        var existingDeleteButton = document.getElementById(\"deleteButton\");
+        if (existingDeleteButton) {
+            existingDeleteButton.remove(); // Remove the existing Delete button
+        }
+
+        // create the delete button and add it to the parent class
+        var deleteButton = document.createElement(\"button\");
+        deleteButton.id = \"deleteButton\"; // Assign a unique ID to the button
+        deleteButton.className = \"red-button\"; // Add the desired class for styling
+        deleteButton.type = \"button\";
+        deleteButton.innerText = \"Delete\";
+
+
+
+        //the idea is to add the id of the service to the form so we can use it to update the service, remove it everytime otherwise we will have duplicate id key
+
+        var existingHiddenInput = document.querySelector(\"input[name='id']\");
+        if (existingHiddenInput) {
+            existingHiddenInput.remove();
+        }
+
+        //add the hidden id to the form so it can be used to update
+        var hiddenIdInput = document.createElement(\"input\");
+        hiddenIdInput.type = \"hidden\";
+        hiddenIdInput.name = \"id\";
+        hiddenIdInput.value = cells[0].innerText;
+
+        //functionality to call delete service
+        deleteButton.onclick = function () {
+            deleteService(cells[0].innerText); // Call deleteService function when clicked
+        };
+
+        //add child to parent 
+        document.getElementById(\"serviceForm\").appendChild(hiddenIdInput);
+        document.getElementById(\"serviceForm\").appendChild(deleteButton);
+        var modal = document.getElementById(\"serviceFormModal\");
+        //close the form
+        modal.style.display = \"block\";
+    }
+
+
+    //this function is called when the delete button is clicked to delete the service
+    function deleteService(id) {
+        //confirms with the staff if they are ready to delete the selected service
+        if (!confirm(\"Are you sure you want to delete this service?\")) {
+            modal.style.display = \"none\";
+            return;
+        }
+        //create form data to send to the server
+        const formData = new FormData();
+        formData.append(\"id\", id);
+        //post request to delre service
+        fetch('/staffportal/service/delete', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.success);
+                    clearDate();
+                } else {
+                    alert(data.success);
+                }
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        clearDate();
+        modal.style.display = \"none\";
+
+    }
+
+    function searchServiceByDate() {
+        date = document.getElementById(\"servicedate\").value;
+        if (date == \"\") {
+            date = \"false\";
+        }
+
+        fetch(`/staffportal/service/update?date=\${encodeURIComponent(date)}`, {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => {
+                var tableBody = document.getElementById(\"serviceListBody\");
+
+                // Clear the current rows in the table (optional)
+                tableBody.innerHTML = '';
+
+                // Loop through the returned data and create new rows dynamically
+                data.forEach(service => {
+                    var row = document.createElement(\"tr\");
+                    row.innerHTML = `
+            <td class=\"id-data\">\${service.id}</td>
+            <td>\${service.service}</td>
+            <td>\${service.service_date}</td>
+            <td>\${service.time_start}</td>
+            <td>\${service.time_end}</td>
+            <td>\${service.tables_available}</td>
+            <td>\${service.tables_booked}</td>
+            <td>\${service.service_status}</td>
+            <td><button class=\"amend-button\" onclick=\"amendService(this)\" type=\"button\">Amend</button></td>
+        `;
+                    // Append the new row to the table body
+                    tableBody.appendChild(row);
+                });
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    }
+
+
+    function clearDate() {
+        document.getElementById(\"servicedate\").value = \"\";
+        searchServiceByDate();
+    }
+    
+    getDates();
+    
+    function getDates() {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        const dayAfterTomorrow = new Date(today);
+
+        tomorrow.setDate(today.getDate() + 1);
+        dayAfterTomorrow.setDate(today.getDate() + 2);
+
+        const dates = {
+            today: today.toISOString().split('T')[0],
+            tomorrow: tomorrow.toISOString().split('T')[0],
+            dayAfterTomorrow: dayAfterTomorrow.toISOString().split('T')[0]
+        };
+
+        console.log(dates);
+        return dates;
+    }
+
+    // Handle form submission
+    document.getElementById(\"serviceForm\").addEventListener(\"submit\", function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        //check if button text is submit or update
+        var submitBtn = document.querySelector(\"button[type='submit']\");
+        //remove the id from the from data as its not required for inserting into db
+        console.log(submitBtn.innerText);
+        if (submitBtn.innerText == \"Submit\") {
+            formData.delete(\"id\");
+
+        }
+
+        //call to post data
+        fetch('/staffportal/service/add', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.success);
+
+                } else {
+                    alert(data.success);
+                }
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        // Close the modal after form submission
+        clearDate();
+        document.querySelector(\"h2\").innerText = \"Update Service\";
+        document.querySelector(\"button[type='submit']\").innerText = \"Update\";
+        modal.style.display = \"none\";
+
+    });
+
+
+
+
+    // Get the modal and button to open it
+    var modal = document.getElementById(\"serviceFormModal\");
+    var openBtn = document.getElementById(\"openFormBtn\");
+    var closeBtn = document.getElementsByClassName(\"close-btn\")[0];
+    const dateSelected = document.getElementById(\"servicedate\");
+
+    // Open the modal when the button is clicked
+    openBtn.onclick = function () {
+        modal.style.display = \"block\";
+        //cchange heaidng and button text
+        document.querySelector(\"h2\").innerText = \"Create Service\";
+        document.querySelector(\"button[type='submit']\").innerText = \"Submit\";
+    }
+
+    // Close the modal when the close button is clicked
+    closeBtn.onclick = function () {
+        modal.style.display = \"none\";
+        document.querySelector(\"h2\").innerText = \"Update Service\";
+        document.querySelector(\"button[type='submit']\").innerText = \"Update\";
+        var existingDeleteButton = document.getElementById(\"deleteButton\");
+        if (existingDeleteButton) {
+            existingDeleteButton.remove(); // Remove the existing Delete button
+        }
+
+    }
+
+    // Close the modal if the user clicks anywhere outside the modal
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            document.querySelector(\"h2\").innerText = \"Update Service\";
+            document.querySelector(\"button[type='submit']\").innerText = \"Update\";
+            modal.style.display = \"none\";
+            var existingDeleteButton = document.getElementById(\"deleteButton\");
+            if (existingDeleteButton) {
+                existingDeleteButton.remove(); // Remove the existing Delete button
+            }
+
+        }
+    }
+
+    dateSelected.addEventListener(\"change\", function () {
+
+        searchServiceByDate();
+    });
+
+</script>";
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "staffportal/service.html";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  254 => 136,  244 => 132,  240 => 131,  236 => 130,  232 => 129,  228 => 128,  224 => 127,  220 => 126,  216 => 125,  213 => 124,  209 => 123,  146 => 62,  144 => 61,  129 => 48,  122 => 46,  113 => 43,  109 => 42,  106 => 41,  102 => 40,  98 => 39,  95 => 38,  91 => 37,  88 => 36,  86 => 34,  85 => 33,  84 => 32,  83 => 31,  71 => 21,  69 => 20,  59 => 13,  50 => 7,  42 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>{{pagetitle}}</title>
+    <link rel=\"stylesheet\" href=\"/public/css/staffportalhub.css\">
+</head>
+
+<body>
+
+    {{ include('/staffportal/header.html') }}
+    <main>
+        <h1 class=\"\">Service Management</h1>
+
+        <section class=\"filter-section\">
+
+            <label for=\"service-date\">Selected Date:</label>
+            <input class=\"selecteddate\" type=\"date\" id=\"servicedate\" name=\"service-date\" value=\"{{ \" now\" | date(\"Y-m-d\")
+                }}\">
+
+            <button class=\"red-button\" type=\"button\" onclick=\"clearDate()\">Clear Filter</button>
+
+            <button style=\"float: right;\" class=\"red-button\" id=\"openFormBtn\">Add Service</button>
+
+        </section>
+
+
+        <div class=\"container\">
+            {% set days = {
+                'Today': today_meals,
+                'Tomorrow': tomorrow_meals,
+                'Day After Tomorrow': day_after_tomorrow_meals
+            } %}
+        
+            {% for day, service in days %}
+            <div class=\"card\">
+                <h3>{{ day }}</h3>
+                {% for day in service %}
+                <div class=\"meal\">
+                    <strong>{{ day.name }}</strong>
+                    <div class=\"meal-time\">{{ day.time }}</div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <section>
+            <!-- The Modal -->
+            <div id=\"serviceFormModal\" class=\"modal\">
+                <div class=\"modal-content\">
+                    <span class=\"close-btn\">&times;</span>
+                    <h2>Create Service</h2>
+
+                    <!-- Form to Add Service -->
+                    <form id=\"serviceForm\">
+                        <div>
+                            <label for=\"service-date\">Service Date:</label>
+                            <input type=\"date\" id=\"service-date\" name=\"service-date\" value=\"{{ \" now\" | date(\"Y-m-d\")
+                                }}\" required>
+                        </div>
+
+                        <div>
+                            <label for=\"service\">Service Status:</label>
+                            <select id=\"service\" name=\"service\" required>
+                                <option value=\"Breakfast\">Breakfast</option>
+                                <option value=\"Lunch\">Lunch</option>
+                                <option value=\"Dinner\">Dinner</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for=\"time-start\">Start Time:</label>
+                            <input type=\"time\" id=\"time-start\" name=\"time-start\" required>
+                        </div>
+
+                        <div>
+                            <label for=\"time-end\">End Time:</label>
+                            <input type=\"time\" id=\"time-end\" name=\"time-end\" required>
+                        </div>
+
+                        <div>
+                            <label for=\"tables-available\">Tables Available:</label>
+                            <input type=\"number\" id=\"tables-available\" name=\"tables-available\" min=\"1\" required>
+                        </div>
+
+                        <div>
+                            <label for=\"service-status\">Service Status:</label>
+                            <select id=\"service-status\" name=\"service-status\" required>
+                                <option value=\"available\">Available</option>
+                                <option value=\"fully booked\">Fully Booked</option>
+                                <option value=\"closed\">Closed</option>
+                            </select>
+                        </div>
+
+                        <button class=\"red-button\" type=\"submit\">Submit</button>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th class=\"id-heading\">ID</th>
+                        <th>Service</th>
+                        <th>Service Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Total Tables</th>
+                        <th>Tables Booked</th>
+                        <th>Status</th>
+                        <th>Amend</th>
+                    </tr>
+                </thead>
+                <tbody id=\"serviceListBody\">
+                    {% for service in servicelist %}
+                    <tr id=\"service-row\">
+                        <td class=\"id-data\">{{ service.id }}</td>
+                        <td>{{ service.service }}</td>
+                        <td>{{ service.service_date }}</td>
+                        <td>{{ service.time_start }}</td>
+                        <td>{{ service.time_end }}</td>
+                        <td>{{ service.tables_available }}</td>
+                        <td>{{ service.tables_booked }}</td>
+                        <td>{{ service.service_status }}</td>
+                        <td><button class=\"amend-button\" onclick=\"amendService(this)\" type=\"button\">Amend</button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>
+
+<script>
+    //function to amend the service updates the form.
+    function amendService(button) {
+        //change the appearance of the form to coresspond to the amend action so we dont have to create a new form. 
+        var row = button.parentElement.parentElement;
+        var cells = row.getElementsByTagName(\"td\");
+        document.querySelector(\"h2\").innerText = \"Update Service\";
+        document.querySelector(\"button[type='submit']\").innerText = \"Update\";
+        // Populate the form with the values from the selected row
+        document.getElementById(\"service-date\").value = cells[2].innerText;
+        document.getElementById(\"service\").value = cells[1].innerText;
+        document.getElementById(\"time-start\").value = cells[3].innerText;
+        document.getElementById(\"time-end\").value = cells[4].innerText;
+        document.getElementById(\"tables-available\").value = cells[5].innerText;
+        document.getElementById(\"service-status\").value = cells[7].innerText;
+
+
+        //check if there is a delete button already and remove it so we dont override
+        var existingDeleteButton = document.getElementById(\"deleteButton\");
+        if (existingDeleteButton) {
+            existingDeleteButton.remove(); // Remove the existing Delete button
+        }
+
+        // create the delete button and add it to the parent class
+        var deleteButton = document.createElement(\"button\");
+        deleteButton.id = \"deleteButton\"; // Assign a unique ID to the button
+        deleteButton.className = \"red-button\"; // Add the desired class for styling
+        deleteButton.type = \"button\";
+        deleteButton.innerText = \"Delete\";
+
+
+
+        //the idea is to add the id of the service to the form so we can use it to update the service, remove it everytime otherwise we will have duplicate id key
+
+        var existingHiddenInput = document.querySelector(\"input[name='id']\");
+        if (existingHiddenInput) {
+            existingHiddenInput.remove();
+        }
+
+        //add the hidden id to the form so it can be used to update
+        var hiddenIdInput = document.createElement(\"input\");
+        hiddenIdInput.type = \"hidden\";
+        hiddenIdInput.name = \"id\";
+        hiddenIdInput.value = cells[0].innerText;
+
+        //functionality to call delete service
+        deleteButton.onclick = function () {
+            deleteService(cells[0].innerText); // Call deleteService function when clicked
+        };
+
+        //add child to parent 
+        document.getElementById(\"serviceForm\").appendChild(hiddenIdInput);
+        document.getElementById(\"serviceForm\").appendChild(deleteButton);
+        var modal = document.getElementById(\"serviceFormModal\");
+        //close the form
+        modal.style.display = \"block\";
+    }
+
+
+    //this function is called when the delete button is clicked to delete the service
+    function deleteService(id) {
+        //confirms with the staff if they are ready to delete the selected service
+        if (!confirm(\"Are you sure you want to delete this service?\")) {
+            modal.style.display = \"none\";
+            return;
+        }
+        //create form data to send to the server
+        const formData = new FormData();
+        formData.append(\"id\", id);
+        //post request to delre service
+        fetch('/staffportal/service/delete', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.success);
+                    clearDate();
+                } else {
+                    alert(data.success);
+                }
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        clearDate();
+        modal.style.display = \"none\";
+
+    }
+
+    function searchServiceByDate() {
+        date = document.getElementById(\"servicedate\").value;
+        if (date == \"\") {
+            date = \"false\";
+        }
+
+        fetch(`/staffportal/service/update?date=\${encodeURIComponent(date)}`, {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => {
+                var tableBody = document.getElementById(\"serviceListBody\");
+
+                // Clear the current rows in the table (optional)
+                tableBody.innerHTML = '';
+
+                // Loop through the returned data and create new rows dynamically
+                data.forEach(service => {
+                    var row = document.createElement(\"tr\");
+                    row.innerHTML = `
+            <td class=\"id-data\">\${service.id}</td>
+            <td>\${service.service}</td>
+            <td>\${service.service_date}</td>
+            <td>\${service.time_start}</td>
+            <td>\${service.time_end}</td>
+            <td>\${service.tables_available}</td>
+            <td>\${service.tables_booked}</td>
+            <td>\${service.service_status}</td>
+            <td><button class=\"amend-button\" onclick=\"amendService(this)\" type=\"button\">Amend</button></td>
+        `;
+                    // Append the new row to the table body
+                    tableBody.appendChild(row);
+                });
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    }
+
+
+    function clearDate() {
+        document.getElementById(\"servicedate\").value = \"\";
+        searchServiceByDate();
+    }
+    
+    getDates();
+    
+    function getDates() {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        const dayAfterTomorrow = new Date(today);
+
+        tomorrow.setDate(today.getDate() + 1);
+        dayAfterTomorrow.setDate(today.getDate() + 2);
+
+        const dates = {
+            today: today.toISOString().split('T')[0],
+            tomorrow: tomorrow.toISOString().split('T')[0],
+            dayAfterTomorrow: dayAfterTomorrow.toISOString().split('T')[0]
+        };
+
+        console.log(dates);
+        return dates;
+    }
+
+    // Handle form submission
+    document.getElementById(\"serviceForm\").addEventListener(\"submit\", function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        //check if button text is submit or update
+        var submitBtn = document.querySelector(\"button[type='submit']\");
+        //remove the id from the from data as its not required for inserting into db
+        console.log(submitBtn.innerText);
+        if (submitBtn.innerText == \"Submit\") {
+            formData.delete(\"id\");
+
+        }
+
+        //call to post data
+        fetch('/staffportal/service/add', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.success);
+
+                } else {
+                    alert(data.success);
+                }
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        // Close the modal after form submission
+        clearDate();
+        document.querySelector(\"h2\").innerText = \"Update Service\";
+        document.querySelector(\"button[type='submit']\").innerText = \"Update\";
+        modal.style.display = \"none\";
+
+    });
+
+
+
+
+    // Get the modal and button to open it
+    var modal = document.getElementById(\"serviceFormModal\");
+    var openBtn = document.getElementById(\"openFormBtn\");
+    var closeBtn = document.getElementsByClassName(\"close-btn\")[0];
+    const dateSelected = document.getElementById(\"servicedate\");
+
+    // Open the modal when the button is clicked
+    openBtn.onclick = function () {
+        modal.style.display = \"block\";
+        //cchange heaidng and button text
+        document.querySelector(\"h2\").innerText = \"Create Service\";
+        document.querySelector(\"button[type='submit']\").innerText = \"Submit\";
+    }
+
+    // Close the modal when the close button is clicked
+    closeBtn.onclick = function () {
+        modal.style.display = \"none\";
+        document.querySelector(\"h2\").innerText = \"Update Service\";
+        document.querySelector(\"button[type='submit']\").innerText = \"Update\";
+        var existingDeleteButton = document.getElementById(\"deleteButton\");
+        if (existingDeleteButton) {
+            existingDeleteButton.remove(); // Remove the existing Delete button
+        }
+
+    }
+
+    // Close the modal if the user clicks anywhere outside the modal
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            document.querySelector(\"h2\").innerText = \"Update Service\";
+            document.querySelector(\"button[type='submit']\").innerText = \"Update\";
+            modal.style.display = \"none\";
+            var existingDeleteButton = document.getElementById(\"deleteButton\");
+            if (existingDeleteButton) {
+                existingDeleteButton.remove(); // Remove the existing Delete button
+            }
+
+        }
+    }
+
+    dateSelected.addEventListener(\"change\", function () {
+
+        searchServiceByDate();
+    });
+
+</script>", "staffportal/service.html", "/var/www/html/mounted/website/src/Views/staffportal/service.html");
+    }
+}

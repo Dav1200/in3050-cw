@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pagetitle}}</title>
+    <link rel="stylesheet" href="/public/shared/index.css" />
+    <link rel="stylesheet" href="/public/css/diner/dinerhub.css" />
+</head>
+<body>
+    
+{% include 'diner/dinerheader.html' %}
+<main>
+
+<section class="story" style="text-align: center;">
+<h1 >Welcome to Diner Hub {{dinername}}</h1>
+<p>Here you can view your reservations, make new reservations, and update your profile.</p>
+</section>
+
+<section class="hub">
+ 
+    <div class="hub-item">
+        <h2>New Reservation</h2>
+        <p>Make a new reservation</p>
+        <a href="/reservation">Make Reservation</a>
+    </div>
+
+    <div class="hub-item">
+        <h2>Update Password</h2>
+        <p>Set a new password </p>
+        <a href="/changepassword">Update</a>
+    </div>
+
+</section>
+
+
+<section class="story">
+<h1>Your Reservations Histroy</h1>
+
+<div style="max-height: 500px; overflow-y: auto">
+    <table id="reservation-table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Booking Date</th>
+          <th>Service</th>
+          <th>Time</th>
+          <th>Diners</th>
+          <th>Phone Number</th>
+          <th>Extra Requirements</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        {% for reservation in reservations %}
+        <tr>
+          <td>{{reservation.email}}</td>
+          <td>{{reservation.reservation_date}}</td>
+          <td>{{reservation.service}}</td>
+          <td>{{reservation.time_booked}}</td>
+          <td>{{reservation.party_size}}</td>
+          <td>{{reservation.phone_number}}</td>
+          <td>{{reservation.extra_requirements}}</td>
+        </tr>
+        {% endfor %}
+
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+</main>
+
+
+
+{% include 'footer.html' %}
+</body>
+</html>
