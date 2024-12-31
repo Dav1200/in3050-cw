@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/public/shared/index.css" />
+
+<!-- Header Section and Navigation Bar for UX -->
+<header>
+    <div class="image">
+        <a href="index.php">
+            <img src="/public/info package/images/logos/Lancaster's-logos_white.png" alt="Lancaster Restaurant Logo" />
+        </a>
+    </div>
+    <nav>
+        <a aria-label="currently on page Home Page click to refresh" href="index.php">Home</a>
+        <a aria-label="click to view Menu Page" href="Menu/menu.html">Menu</a>
+        <a aria-label="click to view Reservation Page" href="/reservation">Reservation</a>
+        <a aria-label="click to view Team Page" href="about/about.html">About Us</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="location.href='/dinerhub'">Profile</button>
+            <div class="dropdown-content">
+                <a href="/dinerhub">Dashboard</a>
+                <a href="/dinerlogout">Logout</a>
+            </div>
+        </div>
+
+
+
+        <style>
+            /* Dropdown Button */
+            .dropbtn {
+                color: white;
+                padding: 16px;
+                font-size: 19px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                background-color: rgba(128, 128, 128, 0);
+                /* Grey background with 50% opacity */
+            }
+
+            /* The container <div> - needed to position the dropdown content */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+
+            /* Show the dropdown menu on hover */
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* Change the background color of the dropdown button when the dropdown content is shown */
+            .dropdown:hover .dropbtn {
+                background-color: #cb3838;
+            }
+        </style>
+    </nav>
+</header>

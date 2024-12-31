@@ -1,0 +1,2145 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* staffportal/bookings.html */
+class __TwigTemplate_3d6dcc1ab87dc0d04c048b1cb7b2d5b0 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 1
+        yield "<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["title"] ?? null), "html", null, true);
+        yield "</title>
+   
+    <link rel=\"stylesheet\" href=\"/public/css/staff/StaffShared.css\">
+</head>
+
+<body>
+
+    ";
+        // line 14
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "/staffportal/header.html");
+        yield "
+
+    <main>
+
+        <section class=\"section-fix\">
+            <h1>Todays Booking ";
+        // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["todays_Date"] ?? null), "html", null, true);
+        yield "</h1>
+            <div class=\"story\">
+                <h3>Introduction: </h3>
+                <p>Here you can view today's reservations for breakfast, lunch, and dinner in detail. Each section below
+                    lists the individuals bookings for the respective reservation time, including the service type,
+                    booking name, email, phone number, service date, time booked, party size, tables booked, and any
+                    extra requirements.</p>
+                <button onclick=\"openOverlay()\" class=\"red-button\">Next Service List</button>
+            </div>
+        </section>
+
+        <!-- section for the overlay to show the next reservation list for next service if any -->
+        
+        <section id=\"overlay-reservation\" class=\"overlay\" >
+            <div class=\"overlay-content\" >
+        
+                <table style=\"width: 100%;\">
+                    <thead>
+                        <tr>
+                            <th colspan=\"9\" class=\"remove-th-space\"\">Breakfast
+                                Bookings</th>
+                        </tr>
+                        <tr>
+                            <th>Service</th>
+                            <th>Booking Name</th>
+                            <th>Email</th>
+                            <th>Phone No (Optional)</th>
+                            <th>Service Date</th>
+                            <th>Time Booked</th>
+                            <th>Party Size</th>
+                            <th>Tables Booked</th>
+                            <th>Extra Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 57
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 57), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 58
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 58), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 59
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 59), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 60
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 60), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 61
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 61), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 62
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 62), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 63
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 63), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 64
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 64), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 68
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 68), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 69
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 69), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 70
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 70), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 71
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 71), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 72
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 72), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 73
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 73), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 74
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 74), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 75
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 75), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 79
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 79), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 80
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 80), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 81
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 81), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 82
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 82), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 83
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 83), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 84
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 84), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 85
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 85), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 86
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 86), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 90
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 90), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 91
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 91), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 92
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 92), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 93
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 93), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 94
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 94), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 95
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 95), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 96
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 96), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 97
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 97), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 101
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 101), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 102
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 102), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 103
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 103), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 104
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 104), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 105
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 105), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 106
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 106), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 107
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 107), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 108
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 108), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 112
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 112), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 113
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 113), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 114
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 114), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 115
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 115), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 116
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 116), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 117
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 117), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 118
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 118), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 119
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 119), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 123
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 123), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 124
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 124), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 125
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 125), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 126
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 126), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 127
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 127), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 128
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 128), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 129
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 129), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 130
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 130), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 134
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 134), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 135
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 135), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 136
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 136), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 137
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 137), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 138
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 138), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 139
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 139), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 140
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 140), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 141
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 141), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 145
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 145), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 146
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 146), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 147
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 147), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 148
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 148), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 149
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 149), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 150
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 150), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 151
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 151), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 152
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 152), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 156
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 156), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 157
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 157), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 158
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 158), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 159
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 159), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 160
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 160), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 161
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 161), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 162
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 162), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 163
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 163), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 167
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 167), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 168
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 168), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 169
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 169), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 170
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 170), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 171
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 171), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 172
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 172), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 173
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 173), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 174
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 174), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 178
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 178), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 179
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 179), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 180
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 180), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 181
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 181), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 182
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 182), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 183
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 183), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 184
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 184), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 185
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 185), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 189
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 189), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 190
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 190), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 191
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 191), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 192
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 192), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 193
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 193), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 194
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 194), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 195
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 195), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 196
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 196), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 200
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 200), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 201
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 201), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 202
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 202), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 203
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 203), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 204
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 204), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 205
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 205), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 206
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 206), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 207
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 207), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 211
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 211), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 212
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 212), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 213
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 213), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 214
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 214), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 215
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 215), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 216
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 216), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 217
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 217), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 218
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 218), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 222
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 222), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 223
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 223), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 224
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 224), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 225
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 225), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 226
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 226), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 227
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 227), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 228
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 228), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 229
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 229), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 233
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 233), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 234
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 234), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 235
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 235), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 236
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 236), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 237
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 237), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 238
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 238), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 239
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 239), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 240
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 240), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 244
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 244), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 245
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 245), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 246
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 246), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 247
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 247), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 248
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 248), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 249
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 249), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 250
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 250), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 251
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 251), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 255
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 255), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 256
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 256), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 257
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 257), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 258
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 258), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 259
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 259), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 260
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 260), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 261
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 261), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 262
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 262), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 266
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 266), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 267
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 267), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 268
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 268), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 269
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 269), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 270
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 270), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 271
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 271), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 272
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 272), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 273
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 273), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 277
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 277), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 278
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 278), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 279
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 279), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 280
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 280), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 281
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 281), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 282
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 282), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 283
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 283), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 284
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 284), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 288
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 288), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 289
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 289), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 290
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 290), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 291
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 291), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 292
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 292), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 293
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 293), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 294
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 294), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 295
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 295), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 299
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 299), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 300
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 300), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 301
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 301), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 302
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 302), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 303
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 303), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 304
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 304), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 305
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 305), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 306
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 306), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 310
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 310), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 311
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 311), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 312
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 312), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 313
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 313), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 314
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 314), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 315
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 315), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 316
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 316), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 317
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 317), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 321
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 321), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 322
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 322), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 323
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 323), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 324
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 324), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 325
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 325), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 326
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 326), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 327
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 327), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 328
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 328), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 332
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 332), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 333
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 333), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 334
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 334), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 335
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 335), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 336
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 336), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 337
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 337), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 338
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 338), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 339
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 339), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 343
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 343), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 344
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 344), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 345
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 345), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 346
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 346), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 347
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 347), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 348
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 348), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 349
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 349), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 350
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 350), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 354
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 354), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 355
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 355), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 356
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 356), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 357
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 357), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 358
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 358), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 359
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 359), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 360
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 360), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 361
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 361), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 365
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 365), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 366
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 366), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 367
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 367), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 368
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 368), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 369
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 369), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 370
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 370), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 371
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 371), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 372
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 372), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 376
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 376), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 377
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 377), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 378
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 378), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 379
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 379), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 380
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 380), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 381
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 381), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 382
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 382), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 383
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 383), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 387
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 387), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 388
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 388), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 389
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 389), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 390
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 390), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 391
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 391), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 392
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 392), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 393
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 393), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 394
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 394), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 398
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 398), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 399
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 399), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 400
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 400), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 401
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 401), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 402
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 402), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 403
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 403), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 404
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 404), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 405
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 405), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>";
+        // line 409
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "name", [], "any", false, false, false, 409), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 410
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "email", [], "any", false, false, false, 410), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 411
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "phone", [], "any", false, false, false, 411), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 412
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "reservation_date", [], "any", false, false, false, 412), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 413
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "time_booked", [], "any", false, false, false, 413), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 414
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "party_size", [], "any", false, false, false, 414), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 415
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "tables", [], "any", false, false, false, 415), "html", null, true);
+        yield "</td>
+                            <td>";
+        // line 416
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, ($context["booking"] ?? null), "extra_requirements", [], "any", false, false, false, 416), "html", null, true);
+        yield "</td>
+                        </tr>
+                        
+                  
+                    </tbody>
+        
+                </table>
+        
+                <button class=\"red-button\" onclick=\"closeOverlay()\">Close</button>
+                <button class=\"red-button\">Print List</button>
+        
+            </div>
+        
+        </section>
+
+
+        <section class=\"section-fix\">
+            <table style=\" margin-bottom: 60px;\">
+                <thead>
+                    <tr>
+                        <th colspan=\"9\" class=\"remove-th-space\">Breakfast
+                            Bookings</th>
+                    </tr>
+                    <tr>
+                        <th>Service</th>
+                        <th>Booking Name</th>
+                        <th>Email</th>
+                        <th>Phone No (Optional)</th>
+                        <th>Service Date</th>
+                        <th>Time Booked</th>
+                        <th>Party Size</th>
+                        <th>Tables Booked</th>
+                        <th>Extra Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ";
+        // line 452
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(($context["bookings"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["booking"]) {
+            // line 453
+            yield "                    ";
+            if ((CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "service", [], "any", false, false, false, 453) == "Breakfast")) {
+                // line 454
+                yield "                    <tr>
+                        <td>";
+                // line 455
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "service", [], "any", false, false, false, 455), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 456
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "name", [], "any", false, false, false, 456), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 457
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "email", [], "any", false, false, false, 457), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 458
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "phone", [], "any", false, false, false, 458), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 459
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "reservation_date", [], "any", false, false, false, 459), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 460
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "time_booked", [], "any", false, false, false, 460), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 461
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "party_size", [], "any", false, false, false, 461), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 462
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "tables", [], "any", false, false, false, 462), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 463
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "extra_requirements", [], "any", false, false, false, 463), "html", null, true);
+                yield "</td>
+                    </tr>
+                    ";
+            }
+            // line 466
+            yield "                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['booking'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 467
+        yield "                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <section class=\"section-fix\">
+
+
+            <table style=\" margin-bottom: 60px;\">
+                <thead>
+                    <tr>
+                        <th colspan=\"9\" class=\"remove-th-space\"\">Lunch Bookings
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Service</th>
+                        <th>Booking Name</th>
+                        <th>Email</th>
+                        <th>Phone No (Optional)</th>
+                        <th>Service Date</th>
+                        <th>Time Booked</th>
+                        <th>Party Size</th>
+                        <th>Tables Booked</th>
+                        <th>Extra Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    ";
+        // line 497
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(($context["bookings"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["booking"]) {
+            // line 498
+            yield "                    ";
+            if ((CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "service", [], "any", false, false, false, 498) == "Lunch")) {
+                // line 499
+                yield "                    <tr>
+                        <td>";
+                // line 500
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "service", [], "any", false, false, false, 500), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 501
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "name", [], "any", false, false, false, 501), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 502
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "email", [], "any", false, false, false, 502), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 503
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "phone", [], "any", false, false, false, 503), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 504
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "reservation_date", [], "any", false, false, false, 504), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 505
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "time_booked", [], "any", false, false, false, 505), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 506
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "party_size", [], "any", false, false, false, 506), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 507
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "tables", [], "any", false, false, false, 507), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 508
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "extra_requirements", [], "any", false, false, false, 508), "html", null, true);
+                yield "</td>
+                    </tr>
+                    ";
+            }
+            // line 511
+            yield "                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['booking'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 512
+        yield "
+                </tbody>
+            </table>
+        </section>
+
+
+        <section class=\"section-fix\">
+
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan=\"9\" class=\"remove-th-space\"\">Dinner Bookings
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Service</th>
+                        <th>Booking Name</th>
+                        <th>Email</th>
+                        <th>Phone No (Optional)</th>
+                        <th>Service Date</th>
+                        <th>Time Booked</th>
+                        <th>Party Size</th>
+                        <th>Tables Booked</th>
+                        <th>Extra Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    ";
+        // line 542
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(($context["bookings"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["booking"]) {
+            // line 543
+            yield "                    ";
+            if ((CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "service", [], "any", false, false, false, 543) == "Dinner")) {
+                // line 544
+                yield "                    <tr>
+                        <td>";
+                // line 545
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "service", [], "any", false, false, false, 545), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 546
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "name", [], "any", false, false, false, 546), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 547
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "email", [], "any", false, false, false, 547), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 548
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "phone", [], "any", false, false, false, 548), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 549
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "reservation_date", [], "any", false, false, false, 549), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 550
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "time_booked", [], "any", false, false, false, 550), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 551
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "party_size", [], "any", false, false, false, 551), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 552
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "tables", [], "any", false, false, false, 552), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 553
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["booking"], "extra_requirements", [], "any", false, false, false, 553), "html", null, true);
+                yield "</td>
+                    </tr>
+                    ";
+            }
+            // line 556
+            yield "                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['booking'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 557
+        yield "
+                </tbody>
+            </table>
+        </section>
+
+
+
+
+
+    </main>
+
+
+    ";
+        // line 569
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "/staffportal/footer.html");
+        yield "
+</body>
+
+</html>
+<script src=\"/public/js/staff/StaffBookings.js\"></script>";
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "staffportal/bookings.html";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  1536 => 569,  1522 => 557,  1516 => 556,  1510 => 553,  1506 => 552,  1502 => 551,  1498 => 550,  1494 => 549,  1490 => 548,  1486 => 547,  1482 => 546,  1478 => 545,  1475 => 544,  1472 => 543,  1468 => 542,  1436 => 512,  1430 => 511,  1424 => 508,  1420 => 507,  1416 => 506,  1412 => 505,  1408 => 504,  1404 => 503,  1400 => 502,  1396 => 501,  1392 => 500,  1389 => 499,  1386 => 498,  1382 => 497,  1350 => 467,  1344 => 466,  1338 => 463,  1334 => 462,  1330 => 461,  1326 => 460,  1322 => 459,  1318 => 458,  1314 => 457,  1310 => 456,  1306 => 455,  1303 => 454,  1300 => 453,  1296 => 452,  1257 => 416,  1253 => 415,  1249 => 414,  1245 => 413,  1241 => 412,  1237 => 411,  1233 => 410,  1229 => 409,  1222 => 405,  1218 => 404,  1214 => 403,  1210 => 402,  1206 => 401,  1202 => 400,  1198 => 399,  1194 => 398,  1187 => 394,  1183 => 393,  1179 => 392,  1175 => 391,  1171 => 390,  1167 => 389,  1163 => 388,  1159 => 387,  1152 => 383,  1148 => 382,  1144 => 381,  1140 => 380,  1136 => 379,  1132 => 378,  1128 => 377,  1124 => 376,  1117 => 372,  1113 => 371,  1109 => 370,  1105 => 369,  1101 => 368,  1097 => 367,  1093 => 366,  1089 => 365,  1082 => 361,  1078 => 360,  1074 => 359,  1070 => 358,  1066 => 357,  1062 => 356,  1058 => 355,  1054 => 354,  1047 => 350,  1043 => 349,  1039 => 348,  1035 => 347,  1031 => 346,  1027 => 345,  1023 => 344,  1019 => 343,  1012 => 339,  1008 => 338,  1004 => 337,  1000 => 336,  996 => 335,  992 => 334,  988 => 333,  984 => 332,  977 => 328,  973 => 327,  969 => 326,  965 => 325,  961 => 324,  957 => 323,  953 => 322,  949 => 321,  942 => 317,  938 => 316,  934 => 315,  930 => 314,  926 => 313,  922 => 312,  918 => 311,  914 => 310,  907 => 306,  903 => 305,  899 => 304,  895 => 303,  891 => 302,  887 => 301,  883 => 300,  879 => 299,  872 => 295,  868 => 294,  864 => 293,  860 => 292,  856 => 291,  852 => 290,  848 => 289,  844 => 288,  837 => 284,  833 => 283,  829 => 282,  825 => 281,  821 => 280,  817 => 279,  813 => 278,  809 => 277,  802 => 273,  798 => 272,  794 => 271,  790 => 270,  786 => 269,  782 => 268,  778 => 267,  774 => 266,  767 => 262,  763 => 261,  759 => 260,  755 => 259,  751 => 258,  747 => 257,  743 => 256,  739 => 255,  732 => 251,  728 => 250,  724 => 249,  720 => 248,  716 => 247,  712 => 246,  708 => 245,  704 => 244,  697 => 240,  693 => 239,  689 => 238,  685 => 237,  681 => 236,  677 => 235,  673 => 234,  669 => 233,  662 => 229,  658 => 228,  654 => 227,  650 => 226,  646 => 225,  642 => 224,  638 => 223,  634 => 222,  627 => 218,  623 => 217,  619 => 216,  615 => 215,  611 => 214,  607 => 213,  603 => 212,  599 => 211,  592 => 207,  588 => 206,  584 => 205,  580 => 204,  576 => 203,  572 => 202,  568 => 201,  564 => 200,  557 => 196,  553 => 195,  549 => 194,  545 => 193,  541 => 192,  537 => 191,  533 => 190,  529 => 189,  522 => 185,  518 => 184,  514 => 183,  510 => 182,  506 => 181,  502 => 180,  498 => 179,  494 => 178,  487 => 174,  483 => 173,  479 => 172,  475 => 171,  471 => 170,  467 => 169,  463 => 168,  459 => 167,  452 => 163,  448 => 162,  444 => 161,  440 => 160,  436 => 159,  432 => 158,  428 => 157,  424 => 156,  417 => 152,  413 => 151,  409 => 150,  405 => 149,  401 => 148,  397 => 147,  393 => 146,  389 => 145,  382 => 141,  378 => 140,  374 => 139,  370 => 138,  366 => 137,  362 => 136,  358 => 135,  354 => 134,  347 => 130,  343 => 129,  339 => 128,  335 => 127,  331 => 126,  327 => 125,  323 => 124,  319 => 123,  312 => 119,  308 => 118,  304 => 117,  300 => 116,  296 => 115,  292 => 114,  288 => 113,  284 => 112,  277 => 108,  273 => 107,  269 => 106,  265 => 105,  261 => 104,  257 => 103,  253 => 102,  249 => 101,  242 => 97,  238 => 96,  234 => 95,  230 => 94,  226 => 93,  222 => 92,  218 => 91,  214 => 90,  207 => 86,  203 => 85,  199 => 84,  195 => 83,  191 => 82,  187 => 81,  183 => 80,  179 => 79,  172 => 75,  168 => 74,  164 => 73,  160 => 72,  156 => 71,  152 => 70,  148 => 69,  144 => 68,  137 => 64,  133 => 63,  129 => 62,  125 => 61,  121 => 60,  117 => 59,  113 => 58,  109 => 57,  68 => 19,  60 => 14,  50 => 7,  42 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>{{title}}</title>
+   
+    <link rel=\"stylesheet\" href=\"/public/css/staff/StaffShared.css\">
+</head>
+
+<body>
+
+    {{ include('/staffportal/header.html') }}
+
+    <main>
+
+        <section class=\"section-fix\">
+            <h1>Todays Booking {{todays_Date}}</h1>
+            <div class=\"story\">
+                <h3>Introduction: </h3>
+                <p>Here you can view today's reservations for breakfast, lunch, and dinner in detail. Each section below
+                    lists the individuals bookings for the respective reservation time, including the service type,
+                    booking name, email, phone number, service date, time booked, party size, tables booked, and any
+                    extra requirements.</p>
+                <button onclick=\"openOverlay()\" class=\"red-button\">Next Service List</button>
+            </div>
+        </section>
+
+        <!-- section for the overlay to show the next reservation list for next service if any -->
+        
+        <section id=\"overlay-reservation\" class=\"overlay\" >
+            <div class=\"overlay-content\" >
+        
+                <table style=\"width: 100%;\">
+                    <thead>
+                        <tr>
+                            <th colspan=\"9\" class=\"remove-th-space\"\">Breakfast
+                                Bookings</th>
+                        </tr>
+                        <tr>
+                            <th>Service</th>
+                            <th>Booking Name</th>
+                            <th>Email</th>
+                            <th>Phone No (Optional)</th>
+                            <th>Service Date</th>
+                            <th>Time Booked</th>
+                            <th>Party Size</th>
+                            <th>Tables Booked</th>
+                            <th>Extra Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.reservation_date }}</td>
+                            <td>{{ booking.time_booked }}</td>
+                            <td>{{ booking.party_size }}</td>
+                            <td>{{ booking.tables }}</td>
+                            <td>{{ booking.extra_requirements }}</td>
+                        </tr>
+                        
+                  
+                    </tbody>
+        
+                </table>
+        
+                <button class=\"red-button\" onclick=\"closeOverlay()\">Close</button>
+                <button class=\"red-button\">Print List</button>
+        
+            </div>
+        
+        </section>
+
+
+        <section class=\"section-fix\">
+            <table style=\" margin-bottom: 60px;\">
+                <thead>
+                    <tr>
+                        <th colspan=\"9\" class=\"remove-th-space\">Breakfast
+                            Bookings</th>
+                    </tr>
+                    <tr>
+                        <th>Service</th>
+                        <th>Booking Name</th>
+                        <th>Email</th>
+                        <th>Phone No (Optional)</th>
+                        <th>Service Date</th>
+                        <th>Time Booked</th>
+                        <th>Party Size</th>
+                        <th>Tables Booked</th>
+                        <th>Extra Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                    {% if booking.service == 'Breakfast' %}
+                    <tr>
+                        <td>{{ booking.service }}</td>
+                        <td>{{ booking.name }}</td>
+                        <td>{{ booking.email }}</td>
+                        <td>{{ booking.phone }}</td>
+                        <td>{{ booking.reservation_date }}</td>
+                        <td>{{ booking.time_booked }}</td>
+                        <td>{{ booking.party_size }}</td>
+                        <td>{{ booking.tables }}</td>
+                        <td>{{ booking.extra_requirements }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <section class=\"section-fix\">
+
+
+            <table style=\" margin-bottom: 60px;\">
+                <thead>
+                    <tr>
+                        <th colspan=\"9\" class=\"remove-th-space\"\">Lunch Bookings
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Service</th>
+                        <th>Booking Name</th>
+                        <th>Email</th>
+                        <th>Phone No (Optional)</th>
+                        <th>Service Date</th>
+                        <th>Time Booked</th>
+                        <th>Party Size</th>
+                        <th>Tables Booked</th>
+                        <th>Extra Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for booking in bookings %}
+                    {% if booking.service == 'Lunch' %}
+                    <tr>
+                        <td>{{ booking.service }}</td>
+                        <td>{{ booking.name }}</td>
+                        <td>{{ booking.email }}</td>
+                        <td>{{ booking.phone }}</td>
+                        <td>{{ booking.reservation_date }}</td>
+                        <td>{{ booking.time_booked }}</td>
+                        <td>{{ booking.party_size }}</td>
+                        <td>{{ booking.tables }}</td>
+                        <td>{{ booking.extra_requirements }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+
+
+        <section class=\"section-fix\">
+
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan=\"9\" class=\"remove-th-space\"\">Dinner Bookings
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Service</th>
+                        <th>Booking Name</th>
+                        <th>Email</th>
+                        <th>Phone No (Optional)</th>
+                        <th>Service Date</th>
+                        <th>Time Booked</th>
+                        <th>Party Size</th>
+                        <th>Tables Booked</th>
+                        <th>Extra Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for booking in bookings %}
+                    {% if booking.service == 'Dinner' %}
+                    <tr>
+                        <td>{{ booking.service }}</td>
+                        <td>{{ booking.name }}</td>
+                        <td>{{ booking.email }}</td>
+                        <td>{{ booking.phone }}</td>
+                        <td>{{ booking.reservation_date }}</td>
+                        <td>{{ booking.time_booked }}</td>
+                        <td>{{ booking.party_size }}</td>
+                        <td>{{ booking.tables }}</td>
+                        <td>{{ booking.extra_requirements }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+
+
+
+
+
+    </main>
+
+
+    {{ include('/staffportal/footer.html') }}
+</body>
+
+</html>
+<script src=\"/public/js/staff/StaffBookings.js\"></script>", "staffportal/bookings.html", "/var/www/html/mounted/website/src/Views/staffportal/bookings.html");
+    }
+}
