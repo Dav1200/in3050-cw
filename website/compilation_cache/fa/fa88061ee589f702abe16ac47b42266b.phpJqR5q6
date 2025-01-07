@@ -103,44 +103,45 @@ class __TwigTemplate_9694922c69368f95c2478256a9a5ff5b extends Template
             yield "
         </div>
 
-       
+    <div class=\"calendar-links\"></div>
         <a href=\"https://calendar.google.com/calendar/r/eventedit?text=Lancaster+Reservation&dates=";
             // line 39
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["combined_datetime"] ?? null), "html", null, true);
             yield "/";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["end_datetime"] ?? null), "html", null, true);
             yield "&details=We+look+forward+to+serving+you&location=Event+Location\" target=\"_blank\">
-            Add to Google Calendar
-        </a><br> 
-
+            <i class=\"fa fa-google\"></i> Add to Google Calendar
+        </a>
         <a href=\"https://outlook.live.com/calendar/0/deeplink/compose?subject=Lancaster+Reservation&startdt=";
-            // line 43
+            // line 42
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["combined_datetime"] ?? null), "html", null, true);
             yield "&enddt=";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["end_datetime"] ?? null), "html", null, true);
             yield "&body=Your+reservation+at+Lancaster&location=Lancaster+Restaurant\" target=\"_blank\">
-            Add to Outlook Calendar
-        </a><br> 
-        
+            <i class=\"fa fa-windows\"></i> Add to Outlook Calendar
+        </a>
         <a href=\"https://calendar.yahoo.com/?v=60&view=d&type=20&title=Lancaster+Reservation&st=";
-            // line 47
+            // line 45
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["combined_datetime"] ?? null), "html", null, true);
             yield "&et=";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["end_datetime"] ?? null), "html", null, true);
             yield "&desc=Your+reservation+at+Lancaster&in_loc=Lancaster+Restaurant\" target=\"_blank\">
-            Add to Yahoo Calendar
-       <br> </a>
+            <i class=\"fa fa-yahoo\"></i> Add to Yahoo Calendar
+        </a>
+    </div>
+        
+        
           
 
         <button class=\"red-button\" onclick=\"window.location.href='/reservation'\">Go Back</button>
         ";
         }
-        // line 54
+        // line 55
         yield "
 
     </main>
     ";
-        // line 57
+        // line 58
         yield Twig\Extension\CoreExtension::include($this->env, $context, "footer.html");
         yield "
 </body>
@@ -170,7 +171,7 @@ class __TwigTemplate_9694922c69368f95c2478256a9a5ff5b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  144 => 57,  139 => 54,  127 => 47,  118 => 43,  109 => 39,  102 => 35,  88 => 24,  84 => 23,  80 => 22,  76 => 21,  70 => 18,  67 => 17,  65 => 16,  59 => 13,  50 => 7,  42 => 1,);
+        return array (  145 => 58,  140 => 55,  125 => 45,  117 => 42,  109 => 39,  102 => 35,  88 => 24,  84 => 23,  80 => 22,  76 => 21,  70 => 18,  67 => 17,  65 => 16,  59 => 13,  50 => 7,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -212,18 +213,19 @@ class __TwigTemplate_9694922c69368f95c2478256a9a5ff5b extends Template
             {{ reservation_result|raw }}
         </div>
 
-       
+    <div class=\"calendar-links\"></div>
         <a href=\"https://calendar.google.com/calendar/r/eventedit?text=Lancaster+Reservation&dates={{ combined_datetime }}/{{ end_datetime }}&details=We+look+forward+to+serving+you&location=Event+Location\" target=\"_blank\">
-            Add to Google Calendar
-        </a><br> 
-
+            <i class=\"fa fa-google\"></i> Add to Google Calendar
+        </a>
         <a href=\"https://outlook.live.com/calendar/0/deeplink/compose?subject=Lancaster+Reservation&startdt={{ combined_datetime }}&enddt={{ end_datetime }}&body=Your+reservation+at+Lancaster&location=Lancaster+Restaurant\" target=\"_blank\">
-            Add to Outlook Calendar
-        </a><br> 
-        
+            <i class=\"fa fa-windows\"></i> Add to Outlook Calendar
+        </a>
         <a href=\"https://calendar.yahoo.com/?v=60&view=d&type=20&title=Lancaster+Reservation&st={{ combined_datetime }}&et={{ end_datetime }}&desc=Your+reservation+at+Lancaster&in_loc=Lancaster+Restaurant\" target=\"_blank\">
-            Add to Yahoo Calendar
-       <br> </a>
+            <i class=\"fa fa-yahoo\"></i> Add to Yahoo Calendar
+        </a>
+    </div>
+        
+        
           
 
         <button class=\"red-button\" onclick=\"window.location.href='/reservation'\">Go Back</button>

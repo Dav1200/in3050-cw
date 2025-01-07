@@ -21,7 +21,7 @@ class StaffAuth
         } else {
             echo "<script>console.log('Database connection failed.');</script>";
         }
-        $sql = "SELECT * FROM users WHERE role = 'staff'";
+        $sql = "SELECT * FROM staff WHERE role = 'staff'";
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -39,7 +39,7 @@ class StaffAuth
     public function createStaffdb($name, $email, $password, $role): bool
     {
         $db = db_connect();
-        $sql = "INSERT INTO users (email, password, role,name) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO staff (email, password, role,name) VALUES (?, ?, ?, ?)";
         $stmt = $db->prepare($sql);
         $password = password_hash($password, PASSWORD_DEFAULT);
         $stmt->bind_param("ssss", $email, $password, $role, $name);
@@ -61,7 +61,7 @@ class StaffAuth
         $username = $email;
         $password = $pass;
         $db = db_connect();
-        $sql = "SELECT * FROM users WHERE LOWER(email) = LOWER(?) and role = 'staff'";
+        $sql = "SELECT * FROM staff WHERE LOWER(email) = LOWER(?) and role = 'staff'";
         $stmt = $db->prepare($sql);
         $stmt->bind_param("s", $username);
         $stmt->execute();

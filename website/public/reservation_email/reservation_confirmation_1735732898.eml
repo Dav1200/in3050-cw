@@ -1,0 +1,37 @@
+Subject: Reservation Confirmation
+From: reservations@lancaster.com
+To: davsuper1@gmail.com
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation Confirmation</title>
+</head>
+<body>
+    <h2>Reservation Confirmation</h2>
+    <p>Hello dav,</p>
+    <p>Thank you for your reservation! Here are the details:</p>
+    <ul>
+        <li><strong>Date:</strong> 2025-01-01</li>
+        <li><strong>Service:</strong> Lunch</li>
+        <li><strong>Time:</strong> 12:30:00</li>
+        <li><strong>Guests:</strong> 1</li>
+  
+    </ul>
+    <p>We look forward to seeing you!</p>
+    <p>Best regards,<br>Lancaster Reservations</p>
+    <a href="https://calendar.google.com/calendar/r/eventedit?text=Lancaster+Reservation&dates=20250101T123000Z/20250101T124500Z&details=We+look+forward+to+serving+you&location=Event+Location" target="_blank">
+        Add to Google Calendar
+    </a><br>
+
+    <a href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Lancaster+Reservation&startdt=20250101T123000Z&enddt=20250101T124500Z&body=Your+reservation+at+Lancaster&location=Lancaster+Restaurant" target="_blank">
+        Add to Outlook Calendar
+    </a><br>
+
+    <a href="https://calendar.yahoo.com/?v=60&view=d&type=20&title=Lancaster+Reservation&st=20250101T123000Z&et=20250101T124500Z&desc=Your+reservation+at+Lancaster&in_loc=Lancaster+Restaurant" target="_blank">
+        Add to Yahoo Calendar
+    </a><br>
+</body>
+
+</html>

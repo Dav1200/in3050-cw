@@ -9,6 +9,15 @@ CREATE TABLE `users` (
     `name` VARCHAR(255) DEFAULT NULL                
 );
 
+CREATE TABLE `staff` (
+
+    `id` INT AUTO_INCREMENT PRIMARY KEY,    
+    `email` VARCHAR(255) NOT NULL UNIQUE,            
+    `password` VARCHAR(255) NOT NULL,                
+    `role` ENUM('staff', 'diner') NOT NULL,          
+    `name` VARCHAR(255) DEFAULT NULL                
+);
+
 CREATE TABLE service_setup (
     id INT AUTO_INCREMENT PRIMARY KEY, 
     service_date DATE NOT NULL,

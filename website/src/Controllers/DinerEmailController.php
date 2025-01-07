@@ -20,7 +20,10 @@ class DinerEmailController extends Controller
         $data['rtime'] = $_SESSION['rtime'];
         $data['rguests'] = $_SESSION['rguests'];
         $data['reservation_result'] = $_SESSION['reservation_result'];
+        
 
+        $data['combined_datetime'] = date('Ymd\THis\Z', strtotime($data['rdate'] . ' ' . $data['rtime']));
+        $data['end_datetime'] = date('Ymd\THis\Z', strtotime($data['rdate'] . ' ' . $data['rtime'] . ' +15 minutes'));
         //unset the session variables after use
         unset($_SESSION['rname']);
         unset($_SESSION['rdate']);
