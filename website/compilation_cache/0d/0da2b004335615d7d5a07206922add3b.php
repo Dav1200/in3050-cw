@@ -51,9 +51,9 @@ class __TwigTemplate_e31997f1b2d296a301ffa4a37edf0af0 extends Template
   </div>
   <nav>
     <a aria-label=\"currently on page Home Page click to refresh\" href=\"index.php\">Home</a>
-    <a aria-label=\"click to view Menu Page\" href=\"Menu/menu.html\">Menu</a>
+    <a aria-label=\"click to view Menu Page\" href=\"menu\">Menu</a>
     <a aria-label=\"click to view Reservation Page\" href=\"/reservation\">Reservation</a>
-    <a aria-label=\"click to view Team Page\" href=\"about/about.html\">About Us</a>
+    <a aria-label=\"click to view Team Page\" href=\"about\">About Us</a>
     <a aria-label=\"Login to your account\" href=\"/login\">Login</a>
 
   </nav>
@@ -91,9 +91,9 @@ class __TwigTemplate_e31997f1b2d296a301ffa4a37edf0af0 extends Template
   </div>
   <nav>
     <a aria-label=\"currently on page Home Page click to refresh\" href=\"index.php\">Home</a>
-    <a aria-label=\"click to view Menu Page\" href=\"Menu/menu.html\">Menu</a>
+    <a aria-label=\"click to view Menu Page\" href=\"menu\">Menu</a>
     <a aria-label=\"click to view Reservation Page\" href=\"/reservation\">Reservation</a>
-    <a aria-label=\"click to view Team Page\" href=\"about/about.html\">About Us</a>
+    <a aria-label=\"click to view Team Page\" href=\"about\">About Us</a>
     <a aria-label=\"Login to your account\" href=\"/login\">Login</a>
 
   </nav>

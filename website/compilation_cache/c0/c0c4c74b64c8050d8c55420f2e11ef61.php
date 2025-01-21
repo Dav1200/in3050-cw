@@ -39,7 +39,8 @@ class __TwigTemplate_d24e47898df2298b70d8f193fd638bf5 extends Template
     {
         $macros = $this->macros;
         // line 1
-        yield "<footer>
+        yield "
+<footer>
   <!-- social container and awards information -->
   <div class=\"social-container\">
     <img src=\"/public/info package/images/awards/hotdinners.svg\" alt=\"HotDinner best New Restaurant award logo\" />
@@ -57,16 +58,19 @@ class __TwigTemplate_d24e47898df2298b70d8f193fd638bf5 extends Template
         class=\"fa-brands fa-instagram fa-2xl\" style=\"color: #ffffff\"></i></a>
     <a aria-label=\"Visit Lancaster’s Youtube\" href=\"https://www.youtube.com/channel/UCJ901NqoRaXMnIm7aOjLyuA\"
       target=\"_blank\"><i class=\"fa-brands fa-youtube fa-2xl\" style=\"color: #ffffff\"></i></a>
-    <a aria-label=\"Visit Lancaster’s Tiktok\" href=\"https://www.tiktok.com/@fallow_restaurant?lang=en\" target=\"_blank\"><i
-        class=\"fa-brands fa-tiktok fa-2xl\" style=\"color: #ffffff\"></i></a>
+    <a aria-label=\"Visit Lancaster’s Tiktok\" href=\"https://www.tiktok.com/@fallow_restaurant?lang=en\"
+      target=\"_blank\"><i class=\"fa-brands fa-tiktok fa-2xl\" style=\"color: #ffffff\"></i></a>
   </div>
   <!-- address and contact information -->
-  <p></p>
-
-
+  <p>52 Haymarket, London, SW1Y 4RP</p>
+  <p><strong>For administrative inquiries</strong>, please contact
+    <span><b><a aria-label=\"link to email admin team directly\" href=\"mailto:admin@lancasters.com\" style=\"color: #ffffff;\">admin@lancasters.com</a></b></span>
+  </p>
+  <p><strong>For customer support</strong>, please contact our support team at
+    <span><b><a aria-label=\"link to email support team directly\" href=\"mailto:support@lancasters.com\" style=\"color: #ffffff;\">support@lancasters.com</a></b></span>
+  </p>
 </footer>
 </body>
-
 </html>";
         yield from [];
     }
@@ -89,7 +93,8 @@ class __TwigTemplate_d24e47898df2298b70d8f193fd638bf5 extends Template
 
     public function getSourceContext(): Source
     {
-        return new Source("<footer>
+        return new Source("
+<footer>
   <!-- social container and awards information -->
   <div class=\"social-container\">
     <img src=\"/public/info package/images/awards/hotdinners.svg\" alt=\"HotDinner best New Restaurant award logo\" />
@@ -107,16 +112,19 @@ class __TwigTemplate_d24e47898df2298b70d8f193fd638bf5 extends Template
         class=\"fa-brands fa-instagram fa-2xl\" style=\"color: #ffffff\"></i></a>
     <a aria-label=\"Visit Lancaster’s Youtube\" href=\"https://www.youtube.com/channel/UCJ901NqoRaXMnIm7aOjLyuA\"
       target=\"_blank\"><i class=\"fa-brands fa-youtube fa-2xl\" style=\"color: #ffffff\"></i></a>
-    <a aria-label=\"Visit Lancaster’s Tiktok\" href=\"https://www.tiktok.com/@fallow_restaurant?lang=en\" target=\"_blank\"><i
-        class=\"fa-brands fa-tiktok fa-2xl\" style=\"color: #ffffff\"></i></a>
+    <a aria-label=\"Visit Lancaster’s Tiktok\" href=\"https://www.tiktok.com/@fallow_restaurant?lang=en\"
+      target=\"_blank\"><i class=\"fa-brands fa-tiktok fa-2xl\" style=\"color: #ffffff\"></i></a>
   </div>
   <!-- address and contact information -->
-  <p></p>
-
-
+  <p>52 Haymarket, London, SW1Y 4RP</p>
+  <p><strong>For administrative inquiries</strong>, please contact
+    <span><b><a aria-label=\"link to email admin team directly\" href=\"mailto:admin@lancasters.com\" style=\"color: #ffffff;\">admin@lancasters.com</a></b></span>
+  </p>
+  <p><strong>For customer support</strong>, please contact our support team at
+    <span><b><a aria-label=\"link to email support team directly\" href=\"mailto:support@lancasters.com\" style=\"color: #ffffff;\">support@lancasters.com</a></b></span>
+  </p>
 </footer>
 </body>
-
 </html>", "/staffportal/footer.html", "/var/www/html/mounted/website/src/Views/staffportal/footer.html");
     }
 }

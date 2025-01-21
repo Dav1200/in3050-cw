@@ -22,6 +22,8 @@ $router = new Router();
 
 $router->get('/', HomeController::class, 'index');
 $router->get('/index.php', HomeController::class, 'index');
+$router->get('/about', HomeController::class, 'about');
+$router->get('/menu', HomeController::class, 'menu');
 
 #staff auth routes
 $router->get('/stafflogin', StaffLoginController::class, 'index');

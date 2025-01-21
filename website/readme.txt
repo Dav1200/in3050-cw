@@ -76,3 +76,6 @@ View the hub, and more.
 
 If logged in, you can access a custom route called dashboard 'click on profile' you can change your password, 
 reserver, and view past histroy of your reservations.
+
+All the emails for simulation are generated in /public/name of emails 
+they are in there respective folders. For template i have shown the reservation email on page.
