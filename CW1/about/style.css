@@ -1,0 +1,86 @@
+/* CSS for the about page */
+/* override story class */
+.story {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Review Section */
+.review-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin:  auto;
+  gap: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+}
+
+/* customer review items each item  */
+.review-background {
+  flex: 1 1 calc(40% - 20px);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  background-color: white;
+  margin-top: 0px;
+  text-align: center;
+  display: flex;
+  display: none; /* Hide all items initially */
+  flex-direction: column;
+  align-items: center;
+}
+/* Show the first 4 reviews */
+.review-container .review-background {
+  display: flex;
+}
+
+h4 {
+  margin: 5px;
+  color: #333;
+}
+
+h3 {
+  margin: 5px;
+  color: #333;
+}
+
+/*review author style*/
+.review-author {
+  font-weight: bold;
+  color: #333;
+}
+/*review date style*/
+.review-date {
+  color: #888;
+  text-align: right;
+}
+/* Review reply */
+.review-reply {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  border-left: 4px solid #333;
+  font-style: italic;
+}
+/* smaller screens */
+@media (max-width: 1024px) {
+  .review-background {
+    flex: 1 1 calc(100% - 20px);
+  }
+}
+/*smaller screens adjust menu card width*/
+@media (max-width: 768px) {
+  .story {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  body {
+    margin: 0;
+  }
+  .review-container {
+    margin: 0;
+    width: 100%;
+  }
+}
